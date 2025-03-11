@@ -1,18 +1,26 @@
-import pkg from "mongoose";
-const { connect } = pkg;
-const { userMongoDB, passwordMongoDB, databaseMongoDB } = process.env;
+import mongoose from 'mongoose';
+const userMongoDB = "plannerpsy1518"
+const passwordMongoDB = "psy1518"
+const databaseMongoDB = "plannerDB"
 
-const im = () => {
-	connect(`mongodb+srv://${userMongoDB}:${passwordMongoDB}@cluster0.w4fuw.mongodb.net/${databaseMongoDB}?retryWrites=true&w=majority`, {
-		serverSelectionTimeoutMS: 5000,
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  }).then(() => {
-    console.log("Banco de dados foi conectado com sucesso!")
-  }).catch(e => {
-    console.error("Ocorreu um erro ao tentar conectar ao banco de dados.")
-		console.log(e)
-  })
-};
+const uri = `mongodb+srv://${userMongoDB}:${passwordMongoDB}@cluster0.w4fuw.mongodb.net/${databaseMongoDB}?retryWrites=true&w=majority`;
 
-export default im;
+let isConnected = false;
+
+export default async function connectDB() {
+    if (isConnected) {
+        console.log('🟢 Já conectado ao MongoDB');
+        return;
+    }
+
+    try {
+        await mongoose.connect(uri, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        isConnected = true;
+        console.log('🔥 Conectado ao MongoDB');
+    } catch (error) {
+        console.error('❌ Erro ao conectar ao MongoDB:', error);
+    }
+}

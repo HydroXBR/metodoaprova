@@ -1,30 +1,22 @@
+
 import axios from 'axios'
 import { join, basename, dirname } from "path"
-
 import * as path from 'path'
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 import { fileURLToPath } from 'url';
 const { token } = process.env
 import express from 'express'
 import cors from 'cors'
-const { PORT } = process.env || 3000
-const app = express()
 import bodyParser from "body-parser"
-const __dirname = dirname(fileURLToPath(import.meta.url))
-import Db from "mongodb"
-import log from "./database/log.js"
-import im from "./db_connect.js"
-const ec = txt => encodeURIComponent(txt)
-const dec = txt => decodeURIComponent(txt)
+const PORT = process.env.PORT || 3001
+const app = express()
+import connectDB from './db_connect.js'
 
-const fetch = s => import('node-fetch').then(({default: fetch}) => fetch(s))
-im()
+/*connectDB();*/
 
-const headers = /** @type {import("http").OutgoingHttpHeaders} */ ({
-		"Access-Control-Allow-Origin": "https://brainly.com.br",
-	"Access-Control-Allow-Methods":"GET",
-	"Access-Control-Allow-Headers":"X-Api-Token"
-})
-
+app.use(cors());
+app.use(express.json());
 app.use(
 	cors({ 
 		exposedHeaders: [
@@ -36,42 +28,30 @@ app.use(
 		extended: true
 	}),
 	express.static(path.join(__dirname, '/interface'))
-)
+);
 
-app.listen(PORT, () => {console.log(`Listening at ${PORT}`)})
+app.get('/src',function(req,res) {
+	const required = req.query.id
+	const format = req.query.format
 
-app.set('view engine', 'ejs')
-app.set('views', path.join(__dirname, '/interface'))
 
-app.get('/',function(req,res) {
-	console.log("Access PRINCIPAL: "+ new Date())
-	res.sendFile(__dirname + '/interface/index.html')
+	res.sendFile(__dirname + `/src/${required}.${format}`)
 })
 
-app.get('/newlog',function(req,res) {
-	console.log("Access LOG: "+ new Date())
-	const id = req.query.id
-	const message = req.query.message
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/interface'));
 
-	const novolog = new log({
-		date: new Date(),
-		message: message		
-	})
+app.get("/", (req, res) => {
+	res.sendFile(path.join(__dirname, "./interface/index.html"));
+});
+app.get("/plataforma", (req, res) => {
+	res.sendFile(path.join(__dirname, "./interface/plataforma.html"));
+});
 
-	novolog.save().then(() => {
-		res.send({ success: true, reason: "success" })
-		}).catch(error => {
-			console.error("Erro", error)
-			res.send({ success: false, reason: error })
-		})
-})
+app.use((req, res) => {
+    res.status(404).send('Página não encontrada!');
+});
 
-app.get('/logsdata', async function(req, res) {
-    try {
-        const logs = await log.find().sort({ date: -1 });
-        res.json({ success: true, logs: logs });
-    } catch (error) {
-        console.error("Erro ao buscar logs:", error);
-        res.status(500).json({ success: false, reason: "Erro ao buscar logs" });
-    }
+app.listen(PORT, () => {
+    console.log(`🔥 Servidor rodando em http://127.0.0.1:${PORT}`);
 });

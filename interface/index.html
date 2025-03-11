@@ -1,22 +1,102 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método Aprova+</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="index.css">
-    <title>SEVEN'TEC</title>
+    <link rel="icon" type="image/png" href="https://i.ibb.co/jryH3q8/Min-Branca.png">
 </head>
 <body>
-    <div class="header">
-        <h1>SEVEN'TEC</h1>
-        <img src="https://i.ibb.co/NnnG5B84/IMG-20250227-WA0206.jpg" alt="Logo SEVEN'TEC">
-    </div>
-    <div class="content">
-        <h2>Avisos</h2>
-        <div id="alert" class="alert normal">Nenhuma pisada forte detectada.</div>
-        <h2>Logs de Pisadas</h2>
-        <div id="logs" class="logs-container"></div>
-    </div>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo-container">
+                <img src="/src?id=logo&format=png" alt="Logo Método" class="logo-img">
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="nav-links" id="nav-links1">
+                <li><a href="/">Estudante</a></li>
+                <li><a href="/sobre">Escola</a></li>
+                <li><a href="/simulados">Planos</a></li>
+                <li><a href="/simulados">Blog</a></li>
+            </ul>
+            <ul class="nav-links" id="nav-links2">
+                <li id="login"><a id="login" href="/plataforma" class="btn-login">Login</a></li>
+                <li><a href="/#"><img id="profile" src="https://voxnews.com.br/wp-content/uploads/2017/04/unnamed.png" alt="Foto de Perfil" class="profile-picture"></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="background-image">
+            <img src="/src?id=back&format=png" alt="Imagem de fundo">
+        </div>
+        <section class="left-content">
+            <button>EU QUERO!</button>
+        </section>
+        <section class="right-content">
+            <div class="carousel">
+                <img src="/src?id=luana&format=png" alt="Aluno 1" class="active">
+                <img src="/src?id=everthania&format=png" alt="Aluno 2">
+                <img src="/src?id=pedro&format=png" alt="Aluno 3">
+                <img src="/src?id=lucasgab&format=png" alt="Aluno 4">
+            </div>
+        </section>
+    </main>
+    
+    <section class="bottom-content">
+        <div class="background-image">
+            <img src="/src?id=quemsomos&format=png" alt="Quem Somos">
+        </div>
+    </section>
+
+    <section class="bottom-content">
+        <div class="background-image">
+            <img src="/src?id=porque&format=png" alt="Por que ser Método Aprova+">
+        </div>
+    </section>
+
+    <section class="legalidade-curso">
+        <h3>SOMOS RECONHECIDOS</h3>
+        <h2>Legalidade do <span>curso</span></h2>
+        <p>Temos <strong>seriedade</strong> e <strong>transparência</strong>, por isso disponibilizamos todos os nossos arquivos e autorizações que demonstrem a nossa <strong>regularidade</strong>!</p>
+    
+        <div class="documentos">
+            <div class="documento">
+                <img src="/src?id=check&format=png" alt="PDF - Parecer de autorização">
+                <p>Parecer de Autorização do EJA EAD</p>
+                <button><a href="/src?id=parecer-eja-cee&format=pdf">DOWNLOAD</a></button>
+            </div>
+            <div class="documento">
+                <img src="/src?id=cnpj&format=png" alt="PDF">
+                <p>CNPJ do Colégio</p>
+                <button><a href="/src?id=cnpjmetodo&format=pdf">DOWNLOAD</a></button>
+            </div>
+        </div>
+    
+        <div class="botoes">
+            <button><a href="https://api.whatsapp.com/send?phone=559294860362">📞 QUERO CHAMAR NO WHATSAPP!</a></button>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="logo">
+                <img src="/src?id=logo&format=png" alt="Método Aprova+">
+            </div>
+    
+            <div class="info">
+                <h2>Método Aprova+</h2>
+                <p>📞 <strong>Contato:</strong> +55 92 9486-0362</p>
+                <p>📷 <strong>Instagram:</strong> @metodo.prevest</p>
+                <p>📍 <strong>Endereço:</strong> Rua Elisa Lispector, 513, Bairro Tarumã, Manaus - AM</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="index.js"></script>
 </body>
