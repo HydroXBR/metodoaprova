@@ -16,7 +16,7 @@ html, body {
     padding: 15px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
-    z-index: 2; /* Garante que a navbar fique acima da imagem de fundo */
+    z-index: 2;
 }
 
 .container {
@@ -237,24 +237,24 @@ main {
 .legalidade-curso {
     width: 100%;
     padding: 40px 20px;
-    background-color: #fff; /* Cor de fundo */
+    background-color: #fff;
     text-align: center;
 }
 
 .legalidade-curso h3 {
     font-size: 18px;
-    color: #FE0000; /* Vermelho */
+    color: #FE0000;
     margin-bottom: 10px;
 }
 
 .legalidade-curso h2 {
     font-size: 32px;
-    color: #0C1248; /* Azul escuro */
+    color: #0C1248;
     margin-bottom: 20px;
 }
 
 .legalidade-curso h2 span {
-    color: #FE0000; /* Vermelho */
+    color: #FE0000;
 }
 
 .legalidade-curso p {

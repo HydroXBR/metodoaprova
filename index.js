@@ -11,9 +11,7 @@ import cors from 'cors'
 import bodyParser from "body-parser"
 const PORT = process.env.PORT || 3001
 const app = express()
-import connectDB from './db_connect.js'
 
-/*connectDB();*/
 
 app.use(cors());
 app.use(express.json());
@@ -29,6 +27,13 @@ app.use(
 	}),
 	express.static(path.join(__dirname, '/interface'))
 );
+
+app.use((req, res, next) => {
+    const filePath = path.join(__dirname, "interface", `${req.path}.html`);
+    res.sendFile(filePath, (err) => {
+        if (err) next(); // Continua para a próxima rota se não encontrar o arquivo
+    });
+});
 
 app.get('/src',function(req,res) {
 	const required = req.query.id
