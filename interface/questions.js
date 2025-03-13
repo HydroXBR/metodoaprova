@@ -1,4 +1,60 @@
+const urlParams = new URLSearchParams(window.location.search);
+const type = urlParams.get("type")
+
 const questoesPort1 = [
+    {
+        pergunta: "Quantas letras tem o alfabeto?",
+        alternativas: ["26", "24", "28", "30"],
+        correta: 0
+    },
+    {
+        pergunta: "Qual é a primeira letra do alfabeto?",
+        alternativas: ["A", "B", "C", "D"],
+        correta: 0
+    },
+    {
+        pergunta: "Qual é a última letra do alfabeto?",
+        alternativas: ["X", "Y", "Z", "W"],
+        correta: 2
+    },
+    {
+        pergunta: "Qual palavra começa com a letra 'M'?",
+        alternativas: ["Casa", "Mesa", "Flor", "Sol"],
+        correta: 1
+    },
+    {
+        pergunta: "Qual palavra rima com 'gato'?",
+        alternativas: ["Pato", "Casa", "Flor", "Sol"],
+        correta: 0
+    },
+    {
+        pergunta: "Qual letra vem depois do 'F' no alfabeto?",
+        alternativas: ["E", "G", "H", "I"],
+        correta: 1
+    },
+    {
+        pergunta: "Qual palavra está escrita corretamente?",
+        alternativas: ["Caza", "Casa", "Kaza", "Cassa"],
+        correta: 1
+    },
+    {
+        pergunta: "Qual palavra tem 3 letras?",
+        alternativas: ["Bola", "Casa", "Flor", "Sol"],
+        correta: 3
+    },
+    {
+        pergunta: "Qual palavra começa com a letra 'S'?",
+        alternativas: ["Casa", "Mesa", "Sol", "Flor"],
+        correta: 2
+    },
+    {
+        pergunta: "Qual palavra termina com a letra 'A'?",
+        alternativas: ["Casa", "Mesa", "Flor", "Sol"],
+        correta: 0
+    }
+];
+
+const questoesPort2 = [
     {
         pergunta: "Qual é a forma correta do verbo 'ser' no presente do indicativo para 'ele'?",
         alternativas: ["É", "Sou", "Somos", "São"],
@@ -56,7 +112,7 @@ const questoesPort1 = [
     }
 ];
 
-const questoesMat1 = [
+const questoesMat2 = [
     {
         pergunta: "Qual é o valor posicional do algarismo 5 no número 5.432?",
         alternativas: ["Unidade", "Dezena", "Centena", "Milhar"],
@@ -114,6 +170,59 @@ const questoesMat1 = [
     }
 ];
 
+const questoesMat1 = [
+    {
+        pergunta: "Qual é o número que vem depois do 5?",
+        alternativas: ["4", "5", "6", "7"],
+        correta: 2
+    },
+    {
+        pergunta: "Quantos dedos temos em uma mão?",
+        alternativas: ["4", "5", "6", "7"],
+        correta: 1
+    },
+    {
+        pergunta: "Qual número está entre 7 e 9?",
+        alternativas: ["6", "7", "8", "9"],
+        correta: 2
+    },
+    {
+        pergunta: "Qual é o número que vem antes do 10?",
+        alternativas: ["8", "9", "10", "11"],
+        correta: 1
+    },
+    {
+        pergunta: "Qual é o número que representa 'zero'?",
+        alternativas: ["0", "1", "2", "3"],
+        correta: 0
+    },
+    {
+        pergunta: "Qual número é maior: 3 ou 5?",
+        alternativas: ["3", "5", "São iguais", "Nenhum"],
+        correta: 1
+    },
+    {
+        pergunta: "Qual número é menor: 2 ou 4?",
+        alternativas: ["2", "4", "São iguais", "Nenhum"],
+        correta: 0
+    },
+    {
+        pergunta: "Qual é o número que vem depois do 9?",
+        alternativas: ["8", "9", "10", "11"],
+        correta: 2
+    },
+    {
+        pergunta: "Quantos lados tem um triângulo?",
+        alternativas: ["2", "3", "4", "5"],
+        correta: 1
+    },
+    {
+        pergunta: "Qual número está entre 1 e 3?",
+        alternativas: ["0", "1", "2", "3"],
+        correta: 2
+    }
+];
+
 
 let questoesAtuais = [];
 let questaoAtual = 0;
@@ -122,10 +231,14 @@ let erros = 0;
 let alternativaSelecionada = null;
 
 function carregarQuestoes(id) {
-    if (id === "port1") {
+    if (id == "port1") {
         questoesAtuais = questoesPort1;
-    } else if (id === "mat1") {
+    } else if (id == "mat1") {
         questoesAtuais = questoesMat1;
+    } else if (id == "port2") {
+        questoesAtuais = questoesPort2;
+    } else if (id == "mat2") {
+        questoesAtuais = questoesMat2;
     }
     mostrarQuestao();
 }
@@ -210,7 +323,7 @@ function exibirResultado() {
     const voltarBtnn = document.getElementById("voltar-btnn");
     voltarBtnn.style.display = "block";
     voltarBtnn.addEventListener("click", () => {
-        window.location.href = "/eja";
+        window.location.href = type == "pb" ? "/pbrasil" : "/eja"
     });
 }
 
@@ -228,7 +341,6 @@ function reiniciarQuestionario() {
 document.getElementById("continuar-btn").addEventListener("click", proximaQuestao);
 document.getElementById("reiniciar-btn").addEventListener("click", reiniciarQuestionario);
 
-const urlParams = new URLSearchParams(window.location.search);
 const questionId = urlParams.get("id");
 if (questionId) {
     carregarQuestoes(questionId);
