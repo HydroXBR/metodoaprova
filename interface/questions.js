@@ -223,6 +223,119 @@ const questoesMat1 = [
     }
 ];
 
+const questoesGeo1 = [
+    {
+        pergunta: "Considerando a posição geográfica do Tocantins na região Norte e seu histórico de ocupação, qual fator foi determinante para a criação do estado em 1988, diferenciando-o da dinâmica de outros territórios federais criados no século XX?",
+        alternativas: [
+            "A existência prévia de uma rede urbana consolidada com Goiânia como polo regional",
+            "As pressões políticas regionais aliadas ao potencial econômico da bacia do Tocantins-Araguaia",
+            "A necessidade de ocupação militar das fronteiras amazônicas durante a ditadura",
+            "O descobrimento de grandes reservas petrolíferas na década de 1980"
+        ],
+        correta: 1,
+        explicacao: "A criação do TO está intrinsecamente ligada ao movimento separatista histórico e ao potencial econômico da bacia hidrográfica, que permitiu justificar sua autonomia administrativa."
+    },
+    {
+        pergunta: "A transição entre o Cerrado e a Amazônia no norte tocantinense cria uma zona ecotonal com características peculiares. Sobre essa dinâmica, é correto afirmar que:",
+        alternativas: [
+            "A vegetação apresenta espécies dos dois biomas sem formar um mosaico definido",
+            "O desmatamento nessa zona é irreversível devido aos solos lateríticos",
+            "A biodiversidade é menor que nos biomas originais por ser uma área de transição",
+            "A agricultura mecanizada não se adaptou às condições edáficas dessa região"
+        ],
+        correta: 0,
+        explicacao: "As zonas ecotonais combinam características de ambos biomas, com alta biodiversidade e adaptações específicas, formando um gradiente vegetacional único."
+    },
+    {
+        pergunta: "A implantação da capital Palmas seguiu um modelo urbanístico distinto de outras capitais planejadas do século XX. Essa diferença se manifesta principalmente:",
+        alternativas: [
+            "Na priorização de grandes avenidas radiais em detrimento de áreas verdes",
+            "Na integração imediata com núcleos urbanos preexistentes como Porto Nacional",
+            "Na configuração setorizada que reproduz o zoneamento funcionalista de Brasília",
+            "Na disposição ortogonal que privilegia a escala humana e a ventilação natural"
+        ],
+        correta: 3,
+        explicacao: "Palmas combinou o traçado ortogonal com adaptações climáticas, diferindo do modelo monumental de Brasília."
+    },
+    {
+        pergunta: "O rio Tocantins apresenta particularidades em seu regime fluvial quando comparado ao Araguaia. Essa diferença se explica principalmente por:",
+        alternativas: [
+            "Sua maior dependência das chuvas convectivas do verão amazônico",
+            "O controle exercido pelas usinas hidrelétricas em seu curso médio",
+            "A menor influência do Pantanal mato-grossense em sua bacia de drenagem",
+            "Seu leito encaixado em formações do pré-cambriano no trecho inicial"
+        ],
+        correta: 1,
+        explicacao: "O complexo hidrelétrico de Tucuruí e Serra da Mesa alterou profundamente o regime natural do rio Tocantins."
+    },
+    {
+        pergunta: "A expansão da fronteira agrícola no sudeste tocantinense gerou conflitos fundiários específicos porque:",
+        alternativas: [
+            "As terras devolutas foram regularizadas antes da ocupação efetiva",
+            "A legislação ambiental estadual é mais permissiva que o Código Florestal",
+            "Há sobreposição entre áreas de preservação e títulos de propriedade duvidosos",
+            "Os projetos de colonização ignoraram completamente os zoneamentos ecológicos"
+        ],
+        correta: 2,
+        explicacao: "A combinação de grilagem, sobreposição com unidades de conservação e terras indígenas gera conflitos característicos."
+    },
+    {
+        pergunta: "A rodovia BR-153 (Belém-Brasília) exerce um papel estratégico na geografia tocantinense porque:",
+        alternativas: [
+            "Integra o estado ao circuito produtivo do Centro-Sul sem conexão com o Norte",
+            "Foi planejada paralelamente ao traçado da ferrovia Norte-Sul para multimodalidade",
+            "Estruturou o eixo de povoamento antes mesmo da criação do estado",
+            "Sua construção recente priorizou os corredores de exportação para o Pacífico"
+        ],
+        correta: 2,
+        explicacao: "A BR-153 foi vetor de ocupação desde os anos 1960, antecedendo em décadas a criação do estado."
+    },
+    {
+        pergunta: "O Parque Estadual do Jalapão apresenta peculiaridades geomorfológicas que incluem:",
+        alternativas: [
+            "Depressões interplanálticas com solos hidromórficos",
+            "Formações areníticas com feições ruiniformes e dunas",
+            "Vales fluviais encaixados em estruturas dobradas do proterozoico",
+            "Planaltos basálticos com derrames vulcânicos cenozoicos"
+        ],
+        correta: 1,
+        explicacao: "As formações areníticas do Jalapão incluem chapadões, dunas e os famosos fervedouros."
+    },
+    {
+        pergunta: "A Zona de Processamento de Exportação de Palmas enfrenta dificuldades para se consolidar principalmente devido:",
+        alternativas: [
+            "À distância dos principais mercados consumidores internacionais",
+            "À falta de conexão com rotas marítimas no Arco Norte",
+            "À concorrência com o polo industrial de Araguaína",
+            "Às limitações da matriz energética dependente de termelétricas"
+        ],
+        correta: 0,
+        explicacao: "A localização continental e os custos logísticos são entraves estruturais para as ZPEs no Centro-Norte."
+    },
+    {
+        pergunta: "A demografia tocantinense apresenta como característica singular:",
+        alternativas: [
+            "Êxodo rural acelerado sem correspondente metropolização",
+            "Crescimento vegetativo negativo desde 2010",
+            "Predomínio absoluto de migrantes nordestinos na população",
+            "Taxa de urbanização inferior à média nacional desde 1991"
+        ],
+        correta: 0,
+        explicacao: "O estado tem urbanização recente sem formação de metrópoles, com cidades médias polarizando o território."
+    },
+    {
+        pergunta: "O Projeto Rio Formoso representa na geografia agrícola tocantinense:",
+        alternativas: [
+            "Uma iniciativa pioneira de agricultura orgânica em larga escala",
+            "A transição do modelo de colonização para agricultura empresarial",
+            "A adaptação bem-sucedida da fruticultura irrigada aos solos arenosos",
+            "O primeiro distrito irrigado com tecnologia israelense no Cerrado"
+        ],
+        correta: 2,
+        explicacao: "Destaca-se pela fruticultura irrigada (principalmente abacaxi) em áreas originalmente consideradas marginais."
+    }
+];
+
 
 let questoesAtuais = [];
 let questaoAtual = 0;
@@ -239,6 +352,8 @@ function carregarQuestoes(id) {
         questoesAtuais = questoesPort2;
     } else if (id == "mat2") {
         questoesAtuais = questoesMat2;
+    } else if (id == "geo1") {
+        questoesAtuais = questoesGeo1;
     }
     mostrarQuestao();
 }

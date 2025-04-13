@@ -78,6 +78,7 @@ function carregarConteudos(materia) {
     }
 }
 
+
 function voltar() {
     const conteudosMateria = document.getElementById("conteudos-materia");
     const gradeMaterias = document.getElementById("grade-materias");
