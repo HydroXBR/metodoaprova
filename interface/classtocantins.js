@@ -1,5 +1,5 @@
 const materias = [
-    "portugues", "matematica", "historia", "geografia", "biologia", "fisica", "quimica"
+    "portugues", "matematica", "historia", "geografia", "biologia", "redacao", "fisica", "quimica"
 ];
 
 const conteudos = {
